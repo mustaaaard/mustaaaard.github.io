@@ -4,322 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Milk Krate - Indie Studio</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Courier New", monospace;
-        background: #fff;
-        color: #000;
-        overflow-x: hidden;
-        line-height: 1.6;
-      }
-
-      header {
-        padding: 2rem 5%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid #000;
-      }
-
-      .logo {
-        font-size: 1.4rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        color: #000;
-        text-transform: uppercase;
-      }
-
-      nav {
-        display: flex;
-        gap: 2.5rem;
-      }
-
-      nav a {
-        text-decoration: none;
-        color: #000;
-        font-size: 0.85rem;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        transition: all 0.3s;
-        border-bottom: 2px solid transparent;
-      }
-
-      nav a:hover {
-        border-bottom: 2px solid #000;
-      }
-
-      .hero {
-        padding: 8rem 5% 6rem;
-        max-width: 1000px;
-        margin: 0 auto;
-        min-height: 80vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .hero h1 {
-        font-size: 4.5rem;
-        line-height: 1.15;
-        margin-bottom: 2rem;
-        font-weight: 400;
-        letter-spacing: -1px;
-        color: #000;
-        font-family: "Georgia", serif;
-      }
-
-      .highlight {
-        font-style: italic;
-      }
-
-      .hero-subtitle {
-        font-size: 1.1rem;
-        color: #000;
-        max-width: 500px;
-        margin-bottom: 3rem;
-        line-height: 1.8;
-      }
-
-      .cta-group {
-        display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-      }
-
-      .btn {
-        padding: 0.9rem 2rem;
-        font-size: 0.8rem;
-        border: 2px solid #000;
-        border-radius: 0;
-        cursor: pointer;
-        transition: all 0.3s;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-block;
-        font-family: "Courier New", monospace;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        background: transparent;
-        color: #000;
-      }
-
-      .btn-primary {
-        background: #000;
-        color: #fff;
-      }
-
-      .btn-primary:hover {
-        background: #fff;
-        color: #000;
-      }
-
-      .btn-secondary {
-        background: transparent;
-        color: #000;
-      }
-
-      .btn-secondary:hover {
-        background: #000;
-        color: #fff;
-      }
-
-      .divider {
-        width: 100%;
-        height: 2px;
-        background: #000;
-        margin: 5rem 0;
-      }
-
-      .about {
-        padding: 6rem 5%;
-        max-width: 100%;
-        margin: 0 auto;
-      }
-
-      .about-image {
-        width: 100%;
-        margin-bottom: 40px;
-        display: block;
-      }
-
-      .about-content {
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 0 5%;
-      }
-
-      .about-label {
-        font-size: 0.75rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: #000;
-        margin-bottom: 1.5rem;
-      }
-
-      .about h2 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        font-weight: 400;
-        color: #000;
-        font-family: "Georgia", serif;
-        line-height: 1.4;
-      }
-
-      .about p {
-        font-size: 1rem;
-        color: #000;
-        line-height: 1.9;
-        margin-bottom: 1.5rem;
-        max-width: 700px;
-      }
-
-      .values {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-        padding: 2rem 0;
-      }
-
-      .value {
-        border-left: 2px solid #000;
-        padding-left: 1.5rem;
-      }
-
-      .value-title {
-        font-size: 0.85rem;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: #000;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-      }
-
-      .value-desc {
-        font-size: 0.95rem;
-        color: #000;
-        line-height: 1.6;
-      }
-
-      .focus-section {
-        padding: 6rem 5%;
-        max-width: 900px;
-        margin: 0 auto;
-      }
-
-      .focus-label {
-        font-size: 0.75rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: #000;
-        margin-bottom: 1.5rem;
-      }
-
-      .focus-title {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        font-weight: 400;
-        font-family: "Georgia", serif;
-        line-height: 1.4;
-      }
-
-      .focus-text p {
-        font-size: 1rem;
-        color: #000;
-        line-height: 1.9;
-        margin-bottom: 1.5rem;
-      }
-
-      .cta-section {
-        padding: 6rem 5%;
-        max-width: 900px;
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      .cta-section h2 {
-        font-size: 2.2rem;
-        margin-bottom: 1rem;
-        font-weight: 400;
-        color: #000;
-        font-family: "Georgia", serif;
-      }
-
-      .cta-section p {
-        font-size: 1rem;
-        color: #000;
-        margin-bottom: 2.5rem;
-      }
-
-      footer {
-        padding: 3rem 5%;
-        border-top: 2px solid #000;
-        text-align: center;
-        margin-top: 4rem;
-      }
-
-      footer p {
-        color: #000;
-        margin-bottom: 0.8rem;
-        font-size: 0.85rem;
-        letter-spacing: 0.5px;
-      }
-
-      footer a {
-        color: #000;
-        text-decoration: none;
-        transition: all 0.3s;
-        border-bottom: 1px solid #000;
-      }
-
-      footer a:hover {
-        text-decoration: none;
-      }
-
-      .badge {
-        display: inline-block;
-        border: 2px solid #000;
-        padding: 0.5rem 1rem;
-        font-size: 0.75rem;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: #000;
-        margin-bottom: 2rem;
-      }
-
-      @media (max-width: 768px) {
-        .hero h1 {
-          font-size: 2.5rem;
-        }
-
-        nav {
-          gap: 1rem;
-          font-size: 0.75rem;
-        }
-
-        .about h2 {
-          font-size: 1.8rem;
-        }
-
-        .cta-section h2 {
-          font-size: 1.6rem;
-        }
-
-        .values {
-          grid-template-columns: 1fr;
-        }
-
-        .focus-title {
-          font-size: 1.8rem;
-        }
-      }
-    </style>
+    <meta
+      name="description"
+      content="Designing interaction with intent—UI/UX, visual systems, and prototyping for digital products, device interfaces, and physical artifacts."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/home.css" />
   </head>
   <body>
     <header>
@@ -328,39 +19,35 @@
         <a href="#about">About</a>
         <a href="#focus">Work</a>
         <a href="#contact">Contact</a>
+        <a href="links.html">Links</a>
       </nav>
     </header>
 
     <section class="hero">
       <div class="badge">Independent Creative Studio</div>
-      <h1>Making things on <span class="highlight">our own terms.</span></h1>
+      <h1>Designing interaction with intent</h1>
       <p class="hero-subtitle">
-        Design on our own terms. Unapologetically us, built for people who get
-        it.
+        We’re an experimental product studio designing interaction, systems, and
+        prototypes across digital and physical forms.
       </p>
       <div class="cta-group">
         <a href="#contact" class="btn btn-primary">Let's talk</a>
-        <a href="mailto:hello@mlkkrt.com" class="btn btn-secondary"
-          >Email</a
-        >
+        <a href="mailto:hello@mlkkrt.com" class="btn btn-secondary">Email</a>
       </div>
     </section>
 
     <div class="divider"></div>
 
     <section class="about" id="about">
-      <img
-        src="assets/be-water.png"
-        alt="Milk Krate work"
-        class="about-image"
-      />
       <div class="about-content">
         <div class="about-label">What we do</div>
-        <h2>Small. Scrappy. Serious about quality.</h2>
+        <h2>Interactive works blending UI with real life.</h2>
         <p>
-          We're an independent studio built for speed, creativity, and real
-          collaboration. No layers. No red tape. Just direct work with people
-          who have genuine ideas.
+          We design and build experimental interfaces that exist beyond the
+          screen — turning familiar digital interactions into physical,
+          participatory experiences. Our work sits between UI design, software,
+          and tangible artifacts, exploring how people interact with systems in
+          the real world.
         </p>
         <p>
           Early stage, but not amateur. We're learning what comes next while
@@ -369,18 +56,27 @@
 
         <div class="values">
           <div class="value">
-            <div class="value-title">Indie First</div>
+            <div class="value-title">Interactive UI-Based Works</div>
             <div class="value-desc">
-              Built to move fast and stay independent.
+              We design interfaces as experiences—systems and installations that
+              invite physical engagement and participation, often moving from
+              software into tangible outputs.
             </div>
           </div>
           <div class="value">
-            <div class="value-title">Quality Over Size</div>
-            <div class="value-desc">We care about depth, not scale.</div>
+            <div class="value-title">Experience Prototyping</div>
+            <div class="value-desc">
+              We use rapid prototyping to explore interaction, behavior, and
+              form. The focus is on clarity through making, not production
+              polish.
+            </div>
           </div>
           <div class="value">
-            <div class="value-title">Raw & Honest</div>
-            <div class="value-desc">No fluff. Real collaboration.</div>
+            <div class="value-title">Graphics → Physical Artifacts</div>
+            <div class="value-desc">
+              We translate graphic work from screen to physical formats,
+              grounding digital systems in material outcomes.
+            </div>
           </div>
         </div>
       </div>
@@ -388,35 +84,9 @@
 
     <div class="divider"></div>
 
-    <section class="focus-section" id="focus">
-      <div class="focus-label">Our perspective</div>
-      <h2 class="focus-title">
-        Exploring retro aesthetics and early internet culture
-      </h2>
-      <div class="focus-text">
-        <p>
-          We're drawn to the visual language of the 80s and 90s—the constraints
-          that forced creativity. That era had something honest about it. Design
-          that didn't pretend to be perfect, that celebrated its limitations.
-        </p>
-        <p>
-          There's a rawness to that aesthetic that we think still resonates.
-          It's about intention, not polish. About making something that feels
-          real.
-        </p>
-        <p>
-          We're exploring how those principles can feel fresh and intentional
-          today. Taking inspiration from the past without nostalgia, building
-          things that feel timeless instead.
-        </p>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
     <section class="cta-section" id="contact">
       <h2>Got something to create?</h2>
-      <p>Reach out. Let's see what happens.</p>
+      <p>Let’s figure it out together.</p>
       <a href="mailto:hello@mlkkrt.com" class="btn btn-primary"
         >hello@mlkkrt.com</a
       >
