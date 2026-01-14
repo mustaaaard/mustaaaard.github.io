@@ -32,6 +32,10 @@ header {
   text-decoration: none;
 }
 
+.logo-short {
+  display: none;
+}
+
 /* Navigation */
 nav {
   display: flex;
@@ -126,6 +130,18 @@ footer a:hover {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  .logo-full {
+    display: none;
+  }
+
+  .logo-short {
+    display: inline;
+  }
+
+  header {
+    padding: 0.7rem 2%;
+  }
+
   nav {
     gap: 1rem;
     font-size: 0.75rem;
